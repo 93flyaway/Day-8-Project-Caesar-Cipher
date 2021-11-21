@@ -53,6 +53,8 @@ while go_again == "yes":
             elif letter in uppercase:
                 message[message_index] = encrypt_uppercase(letter, shift_number)
             message_index += 1
+        result = "".join(message)
+        print(f"Here's the encoded result: {result}")
     elif cipher_mode == "decode":
         message_index = 0
         for letter in message:
@@ -61,7 +63,7 @@ while go_again == "yes":
             elif letter in uppercase:
                 message[message_index] = decrypt_uppercase(letter, shift_number)
             message_index += 1
+        result = "".join(message)
+        print(f"Here's the decoded result: {result}")
 
-    result = "".join(message)
-    print(f"Here's the encoded result: {result}")
     go_again = input("Type 'yes' if you want to go again. Otherwise, type 'no'.\n").lower()
